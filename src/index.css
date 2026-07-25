@@ -1,0 +1,30 @@
+:root{
+  --ink: #16221B;
+  --paper: #F4EFE3;
+  --paper-dim: #E7E0CE;
+  --line: #C9BFA4;
+  --gold: #B8912E;
+  --gold-dim: #8C7126;
+  --sage: #6B7C6C;
+  --stamp-red: #8B3A2E;
+  --shadow: rgba(22,34,27,0.18);
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  background: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--ink);
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  padding: 48px 20px;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  width: 80vw;
+}
