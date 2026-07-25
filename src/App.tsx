@@ -1,21 +1,17 @@
 import { useEffect, useRef, useMemo, useState } from "react";
 
+import { type TaskType } from "./types/TaskType";
+
 import "./App.css";
 
 const STORAGE_TASKS_KEY = "@tasks";
-
-type Task = {
-  text: string;
-  tag?: string;
-  done: boolean;
-};
 
 function App() {
   const firstRender = useRef(true);
   const inputTaskRef = useRef<HTMLInputElement>(null);
 
   const [task, setTask] = useState<string>("");
-  const [tasks, setTasks] = useState<Task[]>([]);
+  const [tasks, setTasks] = useState<TaskType[]>([]);
   const [editMode, setEditMode] = useState({ enabled: false, task: {} });
 
   const totalTasks = useMemo(() => {
@@ -65,14 +61,14 @@ function App() {
     setTask("");
   }
 
-  function handleEdit(item: Task) {
+  function handleEdit(item: TaskType) {
     inputTaskRef.current?.focus();
 
     setTask(item.text);
     setEditMode({ enabled: true, task: item });
   }
 
-  function handleDone(idx: number, item: Task) {
+  function handleDone(idx: number, item: TaskType) {
     const allTasks = [...tasks];
 
     item.done = !item.done;
@@ -81,7 +77,7 @@ function App() {
     setTasks(allTasks);
   }
 
-  function handleRemove(item: Task) {
+  function handleRemove(item: TaskType) {
     const dataTasks = tasks.filter((task) => task !== item);
     setTasks(dataTasks);
   }
@@ -136,7 +132,6 @@ function App() {
 
                 <div className="task-body">
                   <div className="task-text">{task.text}</div>
-                  {/* <div className="task-meta"><span className="tag">{task.tag}</span></div> */}
                 </div>
 
                 <div className="row-actions">
