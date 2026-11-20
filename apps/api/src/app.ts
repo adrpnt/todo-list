@@ -3,6 +3,8 @@ import { HTTPException } from "hono/http-exception";
 import { logger } from "hono/logger";
 
 import { createAuthRoutes } from "./routes/auth.ts";
+import { createListRoutes } from "./routes/lists.ts";
+import { createTaskRoutes } from "./routes/tasks.ts";
 import type { Database } from "./types.ts";
 
 interface AppOptions {
@@ -19,6 +21,8 @@ export function createApp(db: Database, options: AppOptions = {}) {
 
   app.get("/health", (c) => c.json({ status: "ok" }));
   app.route("/auth", createAuthRoutes(db));
+  app.route("/lists", createListRoutes(db));
+  app.route("/tasks", createTaskRoutes(db));
 
   app.notFound((c) => c.json({ error: "Rota não encontrada" }, 404));
 
