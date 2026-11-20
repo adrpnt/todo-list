@@ -5,6 +5,7 @@ import { vi } from "vitest";
 
 import App from "../App";
 import { AuthContext, type AuthContextValue } from "../contexts/AuthContext";
+import { ThemeProvider } from "../contexts/ThemeProvider";
 import { userFixture } from "./fixtures";
 
 interface RenderAppOptions {
@@ -24,11 +25,13 @@ export function renderApp({ route = "/", auth = {} }: RenderAppOptions = {}) {
   };
 
   const result = render(
-    <AuthContext value={authValue}>
-      <MemoryRouter initialEntries={[route]}>
-        <App />
-      </MemoryRouter>
-    </AuthContext>,
+    <ThemeProvider>
+      <AuthContext value={authValue}>
+        <MemoryRouter initialEntries={[route]}>
+          <App />
+        </MemoryRouter>
+      </AuthContext>
+    </ThemeProvider>,
   );
 
   return { ...result, authValue, user: userEvent.setup() };

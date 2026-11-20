@@ -2,6 +2,7 @@ import { Link, Navigate, Outlet, useLocation } from "react-router";
 
 import { useAuth } from "../hooks/useAuth";
 import { LoadingScreen } from "./LoadingScreen";
+import { ThemeToggle } from "./ThemeToggle";
 
 /** Só deixa passar quem está logado; os demais vão para o login. */
 export function PrivateLayout() {
@@ -25,6 +26,7 @@ export function PrivateLayout() {
 
         <div className="topbar-actions">
           <span className="topbar-user">{user.name}</span>
+          <ThemeToggle />
           <button type="button" className="action-btn" onClick={logout}>
             Sair
           </button>

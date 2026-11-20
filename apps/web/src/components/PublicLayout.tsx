@@ -2,6 +2,7 @@ import { Navigate, Outlet, useLocation } from "react-router";
 
 import { useAuth } from "../hooks/useAuth";
 import { LoadingScreen } from "./LoadingScreen";
+import { ThemeToggle } from "./ThemeToggle";
 
 /** Telas de login/cadastro: quem já está logado volta para onde queria ir. */
 export function PublicLayout() {
@@ -21,6 +22,7 @@ export function PublicLayout() {
     <div className="shell">
       <header className="topbar">
         <span className="brand">Livro de registros</span>
+        <ThemeToggle />
       </header>
 
       <main>

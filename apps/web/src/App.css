@@ -52,6 +52,26 @@
   color: var(--desk-ink);
 }
 
+.theme-toggle{
+  display:grid;
+  place-items:center;
+  width:32px; height:32px;
+  padding:0;
+  border-radius:50%;
+  border: 1px solid var(--desk-muted);
+  background: transparent;
+  color: var(--desk-ink);
+  font-size:15px;
+  line-height:1;
+  cursor:pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.theme-toggle:hover{
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 /* ---------- cabeçalho da página ---------- */
 
 .letterhead{
@@ -87,7 +107,7 @@
 
 .back-link{
   display:inline-block;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   font-size:12px;
   letter-spacing:0.5px;
   color: var(--desk-muted);
@@ -103,6 +123,7 @@
 .ledger{
   background: var(--paper);
   color: var(--ink);
+  border: 1px solid var(--paper-edge);
   border-radius: 3px;
   box-shadow: 0 24px 48px var(--shadow);
   position:relative;
@@ -451,9 +472,10 @@ button.stamp{
 
 @media (max-width:480px){
   .ledger{ padding: 28px 20px 24px; }
-  .ledger.ruled::before{ left:34px; }
-  .row-body, .edit-block{ padding-left:20px; }
-  .new-entry input{ padding-left:20px; }
+  /* entre o carimbo (termina em 42px) e o texto */
+  .ledger.ruled::before{ left:49px; }
+  .row-body, .edit-block{ padding-left:14px; }
+  .new-entry input{ padding-left:14px; }
   .topbar-user{ display:none; }
-  .row{ flex-wrap:wrap; }
+  .action-btn{ font-size:12px; }
 }
