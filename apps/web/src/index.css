@@ -1,0 +1,83 @@
+/* Tema claro: folha creme sobre uma mesa de linho */
+:root,
+[data-theme="light"]{
+  color-scheme: light;
+
+  /* mesa: o fundo da página */
+  --desk: #E8E1CF;
+  --desk-ink: #16221B;
+  --desk-muted: #4F5F50;
+
+  /* folha do livro */
+  --paper: #FBF8F1;
+  --paper-edge: transparent;
+  --ink: #16221B;
+  --muted: #5A6B5B;
+  --line: #D3C9AE;
+  --gold: #6F5A17;
+  --gold-strong: #5E4C12;
+  --stamp: #8B3A2E;
+  --stamp-soft: rgba(139, 58, 46, 0.08);
+
+  --button: #16221B;
+  --button-ink: #FBF8F1;
+  --button-hover: #5E4C12;
+
+  --shadow: rgba(22, 34, 27, 0.16);
+  --focus: #8C7126;
+}
+
+/* Tema escuro: folha cinza-grafite sobre mesa quase preta */
+[data-theme="dark"]{
+  color-scheme: dark;
+
+  --desk: #121212;
+  --desk-ink: #EDEDED;
+  --desk-muted: #9E9E9E;
+
+  --paper: #1C1C1C;
+  --paper-edge: rgba(255, 255, 255, 0.07);
+  --ink: #E6E6E6;
+  --muted: #A0A0A0;
+  --line: #383838;
+  --gold: #D4AC4E;
+  --gold-strong: #E3BF66;
+  --stamp: #E07A64;
+  --stamp-soft: rgba(224, 122, 100, 0.12);
+
+  --button: #E9E2CF;
+  --button-ink: #16221B;
+  --button-hover: #D4AC4E;
+
+  --shadow: rgba(0, 0, 0, 0.55);
+  --focus: #D4AC4E;
+}
+
+*{box-sizing:border-box;}
+
+body{
+  margin:0;
+  background: var(--desk);
+  font-family: 'IBM Plex Mono', ui-monospace, monospace;
+  color: var(--ink);
+  min-height:100vh;
+  padding: 32px 20px 48px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#root{
+  width:100%;
+}
+
+button, input{
+  font: inherit;
+}
+
+:focus-visible{
+  outline: 2px solid var(--focus);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{ transition: none !important; }
+}
