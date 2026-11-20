@@ -4,7 +4,7 @@ import { serve } from "@hono/node-server";
 import { createApp } from "./app.ts";
 import { createDatabase } from "./db.ts";
 
-const port = Number(process.env.PORT ?? 3000);
+const port = Number(process.env.PORT ?? 3333);
 const dbPath =
   process.env.DB_PATH ?? fileURLToPath(new URL("../data/app.db", import.meta.url));
 

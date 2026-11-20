@@ -9,7 +9,7 @@ export default defineConfig({
     // Em desenvolvimento o front e a API ficam na mesma origem,
     // então o cookie de sessão funciona sem CORS.
     proxy: {
-      "/api": "http://localhost:3000",
+      "/api": process.env.API_URL ?? "http://localhost:3333",
     },
   },
   test: {
