@@ -1,5 +1,7 @@
 export interface TaskType {
+  id: number;
+  listId: number;
   text: string;
-  tag?: string;
   done: boolean;
+  createdAt: string;
 }
