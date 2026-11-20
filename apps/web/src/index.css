@@ -27,19 +27,19 @@
   --focus: #8C7126;
 }
 
-/* Tema escuro: folha verde-noite com tinta creme */
+/* Tema escuro: folha cinza-grafite sobre mesa quase preta */
 [data-theme="dark"]{
   color-scheme: dark;
 
-  --desk: #0D1410;
-  --desk-ink: #EDE6D4;
-  --desk-muted: #93A595;
+  --desk: #121212;
+  --desk-ink: #EDEDED;
+  --desk-muted: #9E9E9E;
 
-  --paper: #18221C;
-  --paper-edge: rgba(237, 230, 212, 0.07);
-  --ink: #E9E2CF;
-  --muted: #98A99A;
-  --line: #34433A;
+  --paper: #1C1C1C;
+  --paper-edge: rgba(255, 255, 255, 0.07);
+  --ink: #E6E6E6;
+  --muted: #A0A0A0;
+  --line: #383838;
   --gold: #D4AC4E;
   --gold-strong: #E3BF66;
   --stamp: #E07A64;
